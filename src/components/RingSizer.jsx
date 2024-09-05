@@ -1,4 +1,3 @@
-// RingSizer.jsx
 import { useRef, useEffect, useState } from 'react';
 import Webcam from 'react-webcam';
 import * as handpose from '@tensorflow-models/handpose';
@@ -14,6 +13,7 @@ const RingSizer = () => {
   const [selectedFinger, setSelectedFinger] = useState("indexFinger");
   const [handCoordinates, setHandCoordinates] = useState(null);
   const [capturedImage, setCapturedImage] = useState(null);  // Store the captured image
+  const [facingMode, setFacingMode] = useState('user');  // 'user' for front camera, 'environment' for back camera
 
   // Adjust canvas size to match webcam video size
   const setCanvasSize = () => {
@@ -114,6 +114,11 @@ const RingSizer = () => {
     }
   };
 
+  // Toggle between front and back camera
+  const toggleCamera = () => {
+    setFacingMode((prevMode) => (prevMode === 'user' ? 'environment' : 'user'));
+  };
+
   return (
     <div className="container">
       <div className="webcam-container">
@@ -121,6 +126,7 @@ const RingSizer = () => {
           ref={webcamRef}
           screenshotFormat="image/jpeg"
           className="webcam"
+          videoConstraints={{ facingMode }}  // Use facingMode state to control camera
         />
         <canvas
           ref={canvasRef}
@@ -147,6 +153,10 @@ const RingSizer = () => {
         <button className="capture-button" onClick={captureImage}>
           Capture Image
         </button>
+        
+        <button className="toggle-camera-button" onClick={toggleCamera}>
+          Switch Camera
+        </button>
       </div>
 
       {capturedImage && (
@@ -155,7 +165,6 @@ const RingSizer = () => {
           <canvas
             ref={captureCanvasRef}
             className="captured-canvas"
-            // Removed fixed width and height to allow dynamic sizing
           />
         </div>
       )}
