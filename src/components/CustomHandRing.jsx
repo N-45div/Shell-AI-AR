@@ -82,13 +82,13 @@ const CustomHandRing = () => {
   const [rings, setRings] = useState([
     {
       id: 1,
-      src: "/public/rings/ring1.png",
+      src: "/rings/ring1.png",
       position: { top: 0, left: 0 },
       size: { width: 50, height: 50 },
     },
     {
       id: 2,
-      src: "/public/rings/ring2.png",
+      src: "/rings/ring2.png",
       position: { top: 0, left: 0 },
       size: { width: 50, height: 50 },
     },
