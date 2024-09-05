@@ -1,4 +1,6 @@
-import RingSizer from './components/RingSizer';  // Import the RingSizer component
+import RingSizer from './components/RingSizer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CustomHandRing from './components/CustomHandRing';
 
 function App() {
   return (
@@ -7,7 +9,12 @@ function App() {
         <h1>AR Ring Sizer App</h1>
       </header>
       <main>
-        <RingSizer />
+        <Router>
+      <Routes>
+        <Route path="/" element={<RingSizer />} />
+        <Route path="/CustomRing" element={<CustomHandRing />} />
+      </Routes>
+    </Router>
       </main>
       <footer>
         <p>&copy; 2024 AR Ring Sizer</p>
