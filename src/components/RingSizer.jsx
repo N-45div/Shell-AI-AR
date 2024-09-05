@@ -3,6 +3,7 @@ import Webcam from 'react-webcam';
 import * as handpose from '@tensorflow-models/handpose';
 import '@tensorflow/tfjs-backend-webgl';
 import { drawRing } from './utilities';
+import { useNavigate } from "react-router-dom";
 import './Design.css'; // Import custom styles for the layout
 
 const RingSizer = () => {
@@ -13,7 +14,12 @@ const RingSizer = () => {
   const [selectedFinger, setSelectedFinger] = useState("indexFinger");
   const [handCoordinates, setHandCoordinates] = useState(null);
   const [capturedImage, setCapturedImage] = useState(null);  // Store the captured image
-  const [facingMode, setFacingMode] = useState('user');  // 'user' for front camera, 'environment' for back camera
+  const [facingMode, setFacingMode] = useState('user');
+  const navigate = useNavigate();
+
+   const goToCustom = () => {
+    navigate("/ringsizer");
+  };
 
   // Adjust canvas size to match webcam video size
   const setCanvasSize = () => {
@@ -156,6 +162,10 @@ const RingSizer = () => {
         
         <button className="toggle-camera-button" onClick={toggleCamera}>
           Switch Camera
+        </button>
+
+         <button className="go-to-custom-button" onClick={goToCustom}>
+          Go to Custom Hand Ring
         </button>
       </div>
 
