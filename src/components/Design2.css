@@ -1,0 +1,74 @@
+/* src/components/CustomHandRing.css */
+.custom-ring-app {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+input[type="file"] {
+  margin: 10px 0;
+}
+
+.hand-drop-area {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  border: 2px dashed #ccc;
+}
+
+.hand-image {
+  width: 100%;
+  height: auto;
+}
+
+.placed-ring {
+  display: block;
+  cursor: move;
+}
+
+.ring-carousel {
+  display: flex;
+  overflow-x: auto;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.ring-item {
+  width: 50px;
+  margin: 0 10px;
+  cursor: grab;
+}
+
+.ring-item:active {
+  cursor: grabbing;
+}
+
+.save-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 600px) {
+  .ring-item {
+    width: 40px;
+  }
+
+  .placed-ring {
+    width: 40px;
+  }
+
+  .hand-drop-area {
+    max-width: 300px;
+  }
+}
