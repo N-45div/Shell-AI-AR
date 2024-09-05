@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>AR Ring Sizer App</h1>
+        <h1>AR Ring Sizer and Custom Ring App</h1>
       </header>
       <main>
         <Router>
