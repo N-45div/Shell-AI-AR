@@ -13,9 +13,15 @@
     "@mediapipe/hands": "^0.4.1675469240",
     "@tensorflow-models/handpose": "^0.1.0",
     "@tensorflow/tfjs": "^4.21.0",
+    "@tensorflow/tfjs-backend-webgl": "^4.21.0",
     "react": "^18.3.1",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.3.1",
-    "react-webcam": "^7.2.0"
+    "react-rnd": "^10.4.12",
+    "react-router-dom": "^6.26.1",
+    "react-webcam": "^7.2.0",
+    "sol-shell": "file:"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
