@@ -100,6 +100,21 @@ body, html {
   border-radius: 10px;
 }
 
+.go-to-custom-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.go-to-custom-button:hover {
+  background-color: #0056b3;
+}
+
+
 /* Responsive Design */
 @media only screen and (max-width: 768px) {
   .webcam-container {
