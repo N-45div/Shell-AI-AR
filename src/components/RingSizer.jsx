@@ -18,7 +18,7 @@ const RingSizer = () => {
   const navigate = useNavigate();
 
    const goToCustom = () => {
-    navigate("/ringsizer");
+    navigate("/CustomRing");
   };
 
   // Adjust canvas size to match webcam video size
