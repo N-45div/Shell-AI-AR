@@ -1,23 +1,23 @@
-import { useRef, useEffect, useState } from 'react';
-import Webcam from 'react-webcam';
-import * as handpose from '@tensorflow-models/handpose';
-import '@tensorflow/tfjs-backend-webgl';
-import { drawRing } from './utilities';
+import { useRef, useEffect, useState } from "react";
+import Webcam from "react-webcam";
+import * as handpose from "@tensorflow-models/handpose";
+import "@tensorflow/tfjs-backend-webgl";
+import { drawRing } from "./utilities";
 import { useNavigate } from "react-router-dom";
-import './Design.css'; // Import custom styles for the layout
+import "./Design.css"; // Import custom styles for the layout
 
 const RingSizer = () => {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
-  const captureCanvasRef = useRef(null);  // For captured image
+  const captureCanvasRef = useRef(null); // For captured image
   const [ringSize, setRingSize] = useState(null);
   const [selectedFinger, setSelectedFinger] = useState("indexFinger");
   const [handCoordinates, setHandCoordinates] = useState(null);
-  const [capturedImage, setCapturedImage] = useState(null);  // Store the captured image
-  const [facingMode, setFacingMode] = useState('user');
+  const [capturedImage, setCapturedImage] = useState(null); // Store the captured image
+  const [facingMode, setFacingMode] = useState("user");
   const navigate = useNavigate();
 
-   const goToCustom = () => {
+  const goToCustom = () => {
     navigate("/CustomRing");
   };
 
@@ -55,7 +55,7 @@ const RingSizer = () => {
         const hand = await net.estimateHands(video);
 
         if (hand.length > 0) {
-          setHandCoordinates(hand[0].landmarks);  // Store detected hand landmarks
+          setHandCoordinates(hand[0].landmarks); // Store detected hand landmarks
 
           // Mockup data for ring size (can be dynamic based on actual measurements)
           const sizes = {
@@ -65,7 +65,7 @@ const RingSizer = () => {
             ringFinger: 7,
             pinky: 6,
           };
-          
+
           setRingSize(sizes[selectedFinger]);
         }
       }
@@ -85,15 +85,15 @@ const RingSizer = () => {
   const captureImage = () => {
     // Capture image from the webcam
     const imageSrc = webcamRef.current.getScreenshot();
-    
+
     // Store the captured image
     setCapturedImage(imageSrc);
-  
+
     // Once the image is captured, draw it on the captureCanvas
     if (captureCanvasRef.current && imageSrc) {
       const captureCanvas = captureCanvasRef.current;
       const ctx = captureCanvas.getContext("2d");
-      
+
       // Get the video dimensions
       const video = webcamRef.current.video;
       if (video) {
@@ -122,7 +122,7 @@ const RingSizer = () => {
 
   // Toggle between front and back camera
   const toggleCamera = () => {
-    setFacingMode((prevMode) => (prevMode === 'user' ? 'environment' : 'user'));
+    setFacingMode((prevMode) => (prevMode === "user" ? "environment" : "user"));
   };
 
   return (
@@ -132,17 +132,17 @@ const RingSizer = () => {
           ref={webcamRef}
           screenshotFormat="image/jpeg"
           className="webcam"
-          videoConstraints={{ facingMode }}  // Use facingMode state to control camera
+          videoConstraints={{ facingMode }} // Use facingMode state to control camera
         />
-        <canvas
-          ref={canvasRef}
-          className="overlay-canvas"
-        />
+        <canvas ref={canvasRef} className="overlay-canvas" />
       </div>
 
       <div className="controls">
         <label>Select Finger: </label>
-        <select onChange={(e) => setSelectedFinger(e.target.value)} value={selectedFinger}>
+        <select
+          onChange={(e) => setSelectedFinger(e.target.value)}
+          value={selectedFinger}
+        >
           <option value="thumb">Thumb</option>
           <option value="indexFinger">Index Finger</option>
           <option value="middleFinger">Middle Finger</option>
@@ -159,12 +159,12 @@ const RingSizer = () => {
         <button className="capture-button" onClick={captureImage}>
           Capture Image
         </button>
-        
+
         <button className="toggle-camera-button" onClick={toggleCamera}>
           Switch Camera
         </button>
 
-         <button className="go-to-custom-button" onClick={goToCustom}>
+        <button className="go-to-custom-button" onClick={goToCustom}>
           Go to Custom Hand Ring
         </button>
       </div>
@@ -172,10 +172,7 @@ const RingSizer = () => {
       {capturedImage && (
         <div className="captured-image-container">
           <h3>Captured Image:</h3>
-          <canvas
-            ref={captureCanvasRef}
-            className="captured-canvas"
-          />
+          <canvas ref={captureCanvasRef} className="captured-canvas" />
         </div>
       )}
     </div>

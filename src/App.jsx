@@ -1,21 +1,27 @@
-import RingSizer from './components/RingSizer';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import CustomHandRing from './components/CustomHandRing';
+import RingSizer from "./components/RingSizer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import CustomHandRing from "./components/CustomHandRing";
+import Navbar from "./components/Nav/Navbar";
+import Homepage from "./components/Home/Homepage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>AR Ring Sizer and Custom Ring App</h1>
-      </header>
+      {/* Navbar for site navigation */}
+      <Navbar />
+
+      {/* Main content area */}
       <main>
         <Router>
-      <Routes>
-        <Route path="/" element={<RingSizer />} />
-        <Route path="/CustomRing" element={<CustomHandRing />} />
-      </Routes>
-    </Router>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/RingSizer" element={<RingSizer />} />
+            <Route path="/CustomRing" element={<CustomHandRing />} />
+          </Routes>
+        </Router>
       </main>
+
+      {/* Footer section */}
       <footer>
         <p>&copy; 2024 AR Ring Sizer</p>
       </footer>
