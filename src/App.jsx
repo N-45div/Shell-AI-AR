@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CustomHandRing from "./components/CustomHandRing";
 import Navbar from "./components/Nav/Navbar";
 import Homepage from "./components/Home/Homepage";
-
+import Footer from "./components/Footer-Folder/Footer";
 function App() {
   return (
     <div className="App">
@@ -22,9 +22,8 @@ function App() {
       </main>
 
       {/* Footer section */}
-      <footer>
-        <p>&copy; 2024 AR Ring Sizer</p>
-      </footer>
+
+      <Footer />
     </div>
   );
 }

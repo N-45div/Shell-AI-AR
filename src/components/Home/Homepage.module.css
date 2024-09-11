@@ -5,12 +5,13 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 8em 0 0;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    height: 100%;
 }
 
 .exporeH2 {
     width: 624px;
-    font-family: 'Urbanist';
+    font-family: "Urbanist";
     font-style: normal;
     font-weight: 600;
     font-size: 78px;
@@ -19,18 +20,17 @@
     text-align: center;
     letter-spacing: -2.4px;
 
-    background: linear-gradient(104.64deg, rgba(255, 255, 255, 0.9) 31.77%, rgba(255, 255, 255, 0.58) 130.47%);
+    background: linear-gradient(104.64deg,
+            rgba(255, 255, 255, 0.9) 31.77%,
+            rgba(255, 255, 255, 0.58) 130.47%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-
-
 }
 
 .exporeH1 {
-
-    font-family: 'Space Grotesk';
+    font-family: "Space Grotesk";
     font-style: normal;
     font-weight: 700;
     font-size: 92px;
@@ -38,13 +38,14 @@
 
     text-align: center;
     /* Gradient 03 */
-    background: linear-gradient(121.52deg, #FFF4D7 -22.23%, rgba(218, 222, 251, 0.982854) 49.03%, rgba(216, 255, 220, 0.972567) 91.79%);
+    background: linear-gradient(121.52deg,
+            #fff4d7 -22.23%,
+            rgba(218, 222, 251, 0.982854) 49.03%,
+            rgba(216, 255, 220, 0.972567) 91.79%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-
-
 }
 
 .center_text {
@@ -54,11 +55,10 @@
 }
 
 .explore_P {
-
     /* Text Block */
 
     width: 60%;
-    font-family: 'Urbanist';
+    font-family: "Urbanist";
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
@@ -70,7 +70,6 @@
     color: rgba(255, 255, 255, 0.7);
 
     padding: 1em;
-
 }
 
 .button_div {
@@ -88,8 +87,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 16px;
-    background: linear-gradient(180deg, #245FFF 0%, rgba(36, 95, 255, 0.88) 100%);
+    padding: 16px 12px;
+    background: linear-gradient(180deg, #245fff 0%, rgba(36, 95, 255, 0.88) 100%);
     border-radius: 12px;
     margin: 0.5em;
 }
@@ -100,14 +99,192 @@
     flex-direction: row;
     align-items: center;
     padding: 16px 12px;
-    background: linear-gradient(173.55deg, #FFFFFF 1.62%, rgba(255, 255, 255, 0.83) 141.51%);
+    background: linear-gradient(173.55deg,
+            #ffffff 1.62%,
+            rgba(255, 255, 255, 0.83) 141.51%);
     border-radius: 12px;
     margin: 0.5em;
+}
+
+.button_open img {
+    width: 20px;
+    padding: 0.1em;
+}
+
+.features {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 8px 16px 8px 8px;
+    width: 286px;
+    height: 70px;
+    background: linear-gradient(89.8deg,
+            rgba(227, 233, 247, 0.51) 0.15%,
+            rgba(255, 255, 255, 0.12) 100.01%);
+    backdrop-filter: blur(64.2343px);
+    border-radius: 400px;
+    color: white;
+    margin: 4em 0;
+    position: relative;
+}
+
+.features img {
+    width: 30px;
+}
+
+.features p {
+    font-size: 0.7em;
+}
+
+.features b {
+    font-size: 0.75em;
+}
+
+.features h4 b {
+    font-weight: normal;
+    background-color: rgb(17, 221, 170);
+    padding: 0.5em 1em;
+    border-radius: 0.4em;
+    font-weight: bold;
+}
+
+.features h4 {
+    font-size: 0.8em;
+    margin-top: 0.3em;
+
+}
+
+.features .arrowImg {
+    width: 15px;
+}
+
+.features_div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.features .card_circle {
+    width: 20px;
+    position: absolute;
+    top: 40%;
+    right: -3em;
+}
+
+.features .card_circle_Left {
+
+    width: 20px;
+    position: absolute;
+    top: 40%;
+    left: -3em;
+}
+
+@media screen and (max-width: 1500px) {
+    .Homepage {
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .features_div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 70%;
+
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .Homepage {
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .features_div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 90%;
+        align-items: center;
+
+    }
+
+    .features .card_circle,
+    .features .card_circle_Left {
+        display: none;
+    }
+
+    .features {
+        margin: 0.5em 0;
+    }
+
+    .center_text {
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .exporeH2 {
+        font-size: 58px;
+        width: 500px;
+        margin-top: 0.5em;
+
+    }
+
+    .center_text h1 {
+        font-size: 3.5em;
+    }
+
+    .center_text p {
+        width: 70%;
+        font-size: 1em;
+    }
+
+}
+
+
+@media screen and (max-width: 506px) {
+    .exporeH2 {
+        width: 390px;
+        font-size: 55px;
+
+    }
 
 
 }
 
-.button_open img {
-    width: 30px;
-    padding: 0.2em;
+@media screen and (max-width: 400px) {
+    .exporeH2 {
+        font-size: 39px;
+        width: 300px;
+    }
+
+    .center_text h1 {
+        font-size: 2.5em;
+    }
+
+    .center_text p {
+        width: 90%;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .button_div {
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width: 300px) {
+    .exporeH2 {
+        font-size: 39px;
+        width: 100%;
+    }
+
+
 }

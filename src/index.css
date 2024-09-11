@@ -8,11 +8,11 @@ body {
 
   background: linear-gradient(74.18deg, #99A6D5 3.97%, #5B75FE 101.42%);
   border-radius: 16px;
-
-  /* Inside auto layout */
+  font-family: "Urbanist";
   flex: none;
   order: 0;
   flex-grow: 0;
+  /* background-image: url("./assets/images/bg_circular_lines.png"); */
 
 }
 

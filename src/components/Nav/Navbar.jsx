@@ -1,5 +1,5 @@
 import React from "react";
-import { ringImg } from "../../../public/images";
+import { ringImg } from "../../assets/images";
 export default function Navbar() {
   return (
     <div>
@@ -72,14 +72,14 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
               <a
-                className="font-medium text-blue-500 focus:outline-none"
+                className="font-bold text-lg text-white focus:outline-none"
                 href="/RingSizer"
                 aria-current="page"
               >
                 Ring
               </a>
               <a
-                className="font-medium text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+                className="font-bold text-lg text-white hover:text-gray-400 focus:outline-none"
                 href="/CustomHandRing"
               >
                 CustomHandRing
