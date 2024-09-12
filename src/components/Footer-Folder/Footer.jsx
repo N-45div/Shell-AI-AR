@@ -3,14 +3,14 @@ import { ringImg } from "../../assets/images";
 
 export default function Footer() {
   return (
-    <footer className="bg-white  shadow dark:bg-gray-900 ">
+    <footer className="bg-white shadow dark:bg-gray-900 mt-auto">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a
             href="https://flowbite.com/"
             className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
           >
-            <img src={ringImg} className="h-8 rounded-sm" alt="AR Logo "  />
+            <img src={ringImg} className="h-8 rounded-sm" alt="AR Logo " />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               <p>&copy; 2024 AR Ring Sizer</p>
             </span>

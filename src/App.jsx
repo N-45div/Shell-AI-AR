@@ -6,7 +6,7 @@ import Homepage from "./components/Home/Homepage";
 import Footer from "./components/Footer-Folder/Footer";
 function App() {
   return (
-    <div className="App">
+    <div className="App min-h-screen flex flex-col">
       {/* Navbar for site navigation */}
       <Navbar />
 
